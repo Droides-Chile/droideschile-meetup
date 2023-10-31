@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Droides Chile - Meetups</title>
+    <style>
+        /* CSS styles */
+        /* Estilos comunes */
+        body {
+            transition: background-color 0.3s ease;
+        }
+
+        .talk-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .talk {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+            margin: 10px;
+            /* Agrega un poco de espacio entre las tarjetas */
+            border: 1px solid #28a745;
+            /* Línea más fina */
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            /* Sombra más difusa */
+            padding: 1rem;
+            background-color: #fff;
+            /* Fondo blanco (ajustable) */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Transición suave para hover */
+        }
+
+        /* Efecto al pasar el ratón sobre la tarjeta */
+        .talk:hover {
+            transform: translateY(-5px);
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .talk img {
+            width: auto;
+            max-height: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .talk h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .talk p {
+            margin: 0;
+            font-size: 1rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .info {
+            margin-bottom: 2rem;
+            background-color: #f4f4f4;
+            /* Color de fondo, ajustable */
+            border-radius: 10px;
+            /* Bordes redondeados */
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+        }
+
+        .info-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .bugdroid-logo {
+            width: 60px;
+            /* Ajusta el tamaño según necesidad */
+            margin-right: 10px;
+        }
+
+        .info h2 {
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .info p {
+            margin: 0;
+            font-size: 1rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .registration {
+            text-align: center;
+        }
+
+        .registration a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .linkedin-icon {
+            display: inline-block;
+            margin-top: 10px;
+            /* Ajusta según necesidad */
+            color: #0077b5;
+            /* Color del ícono de LinkedIn */
+            font-size: 24px;
+            /* Tamaño del ícono */
+            transition: color 0.3s ease;
+        }
+
+        .linkedin-icon:hover {
+            color: #005691;
+            /* Color al pasar el ratón por encima */
+        }
+
+
+        /* Estilos para el modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #ffffff;
+            }
+
+            .talk {
+                background-color: #242424;
+                border-color: #3c763d;
+            }
+
+            .info {
+                background-color: #2d2d2d;
+                color: #ffffff;
+            }
+
+            .registration a {
+                background-color: #0056b3;
+                color: #ffffff;
+            }
+
+            .linkedin-icon {
+                color: #9ec2e6;
+            }
+
+            .linkedin-icon:hover {
+                color: #7ba7d0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="info">
+        <div class="info-header">
+            <img src="res/img/android-new-logo.png" alt="Bugdroid" class="bugdroid-logo">
+            <h2>Droides Chile Meetup - Noviembre 2023</h2>
+        </div>
+        <p>Fecha: Jueves 23 de Noviembre, 2023</p>
+        <p>Lugar: Av. Presidente Riesco #3237 Las Condes - Santiago</p>
+    </div>
+    <div class="talk-container">
+        <div class="talk">
+            <img src="res/img/speaker-gerardo-prado.jpeg" alt="Talk 1">
+            <h3>Gerardo Prado</h3>
+            <p><i>Android Chapter Lead <br />Productos Digitales Accenture Chile</i></p>
+            <a href="https://www.linkedin.com/in/gdavidpb/" target="_blank" class="linkedin-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <br />
+            <p>De XML a Compose: Un cambio de modelo de pensamiento</p>
+        </div>
+
+        <div class="talk">
+            <img src="res/img/speaker-ciro-oyarzun.jpeg" alt="Talk 2">
+            <h3>Ciro Oyarzun</h3>
+            <p><i>Android Dev Mobdev</i></p>
+            <a href="https://www.linkedin.com/in/ciro-oyarz%C3%BAn-orrego-23a24641/" target="_blank"
+                class="linkedin-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <br />
+            <p>Android y ChatGPT: creando un chatbot con esteroides</p>
+        </div>
+    </div>
+
+    <div class="registration">
+        <a href="https://forms.gle/CiVavatacSVbdCNq7">Registrate</a>
+    </div>
+</body>
+
+</html>
