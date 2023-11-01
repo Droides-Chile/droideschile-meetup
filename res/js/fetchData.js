@@ -7,14 +7,12 @@ async function fetchData() {
         const currentTime = new Date().getTime();
 
         const upcomingMeetup = allMeetups.filter(meetup => {
-            const formattedDate = convertDate(meetup.date);
-            const meetupTime = new Date(formattedDate).getTime();
+            const meetupTime = new Date(meetup.date).getTime();
             return meetupTime > currentTime;
         });
 
         const pastMeetups = allMeetups.filter(meetup => {
-            const formattedDate = convertDate(meetup.date);
-            const meetupTime = new Date(formattedDate).getTime();
+            const meetupTime = new Date(meetup.date).getTime();
             return meetupTime <= currentTime;
         });
 
@@ -28,15 +26,6 @@ async function fetchData() {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-}
-
-function convertDate(dateStr) {
-    // Extrae los componentes de la fecha
-    const [dayName, day, monthName, year] = dateStr.split(' ');
-    // Convierte el nombre del mes a un número (0 a 11)
-    const month = new Date(`${monthName} 1`).getMonth();
-    // Retorna la fecha en un formato que JavaScript puede entender
-    return `${year}-${month + 1}-${day}`;
 }
 
 window.onload = fetchData;

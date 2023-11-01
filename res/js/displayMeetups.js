@@ -1,3 +1,13 @@
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat(navigator.language, { 
+        weekday: 'long', 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+    }).format(date);
+}
+
 function displayUpcomingMeetup(meetup) {
     // Código de la función displayUpcomingMeetup
     const container = document.getElementById('upcomingMeetup');
@@ -7,7 +17,7 @@ function displayUpcomingMeetup(meetup) {
                 <img src="res/img/android-new-logo.png" alt="Bugdroid" class="bugdroid-logo">
                 <h2>${meetup.title}</h2>
             </div>
-            <p>Fecha: ${meetup.date}</p>
+            <p>Fecha: ${formatDate(meetup.date)}</p>
             <p>Lugar: ${meetup.location}</p>
         </div>
     `;
@@ -63,7 +73,7 @@ function displayPastMeetups(meetups) {
         contentDiv.style.display = 'none';
 
         const datePara = document.createElement('p');
-        datePara.textContent = meetup.date;
+        datePara.textContent = formatDate(meetup.date);
         contentDiv.appendChild(datePara);
 
         const locationPara = document.createElement('p');
