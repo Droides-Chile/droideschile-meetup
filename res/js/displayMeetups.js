@@ -71,6 +71,7 @@ function displayPastMeetups(meetups) {
         contentDiv.appendChild(locationPara);
 
         const speakersList = document.createElement('ul');
+       
         meetup.speakers.forEach(speaker => {
             const speakerItem = document.createElement('li');
             speakerItem.style.display = 'flex'; // Asegura que los elementos estén en línea
@@ -79,7 +80,12 @@ function displayPastMeetups(meetups) {
             // Título de la charla
             const talkTitle = document.createElement('h4');
             talkTitle.textContent = speaker.talkTitle;
-            talkTitle.style.marginRight = '10px'; // Espacio entre el título de la charla y el nombre del speaker
+            talkTitle.style.marginRight = '10px'; // Espacio entre el título de la charla y el guión
+        
+            // Guion entre el título de la charla y el nombre del speaker
+            const dash = document.createElement('span');
+            dash.textContent = ' - ';
+            dash.style.marginRight = '5px';
         
             // Nombre del speaker
             const speakerName = document.createElement('span');
@@ -90,16 +96,20 @@ function displayPastMeetups(meetups) {
             const linkedinAnchor = document.createElement('a');
             linkedinAnchor.href = speaker.linkedin;
             linkedinAnchor.target = '_blank';
+            linkedinAnchor.style.display = 'flex'; // Asegura que el ícono esté correctamente alineado
+            linkedinAnchor.style.alignItems = 'center'; // Alinea el ícono con el texto
             const linkedinIcon = document.createElement('i');
             linkedinIcon.className = 'fab fa-linkedin linkedin-icon';
             linkedinAnchor.appendChild(linkedinIcon);
         
             // Agrega los elementos al item del speaker
             speakerItem.appendChild(talkTitle);
+            speakerItem.appendChild(dash);
             speakerItem.appendChild(speakerName);
             speakerItem.appendChild(linkedinAnchor);
             speakersList.appendChild(speakerItem);
         });
+        
 
         contentDiv.appendChild(speakersList);
 
