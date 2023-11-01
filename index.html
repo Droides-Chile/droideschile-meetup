@@ -9,7 +9,12 @@
         /* Estilos comunes */
         body {
             transition: background-color 0.3s ease;
-            font-family: "Josefin Sans", sans-serif
+            font-family: 'Roboto', 'Arial', sans-serif;
+            /* Estilo de fuente Material Design */
+            background-color: #ECEFF1;
+            /* Fondo claro */
+            color: #212121;
+            /* Texto oscuro */
         }
 
         .talk-container {
@@ -24,23 +29,19 @@
             align-items: center;
             width: 40%;
             margin: 10px;
-            /* Agrega un poco de espacio entre las tarjetas */
-            border: 1px solid #28a745;
-            /* Línea más fina */
             border-radius: 5px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            /* Sombra más difusa */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            /* Sombra Material Design */
             padding: 1rem;
-            background-color: #fff;
-            /* Fondo blanco (ajustable) */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* Transición suave para hover */
+            background-color: #FFFFFF;
+            /* Fondo blanco */
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+            /* Transición suave */
         }
 
-        /* Efecto al pasar el ratón sobre la tarjeta */
         .talk:hover {
-            transform: translateY(-5px);
-            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            /* Sombra al pasar el ratón */
         }
 
         .talk img {
@@ -48,31 +49,32 @@
             max-height: 150px;
             height: auto;
             margin-bottom: 1rem;
+            border-radius: 50%;
+            /* Imágenes redondas */
         }
 
-        .talk h3 {
+        .talk h3,
+        .info h2 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 2rem;
             text-align: center;
-            transition: color 0.3s ease;
+            color: #212121;
         }
 
-        .talk p {
+        .talk p,
+        .info p {
             margin: 0;
             font-size: 1rem;
             text-align: center;
-            transition: color 0.3s ease;
+            color: #757575;
         }
 
         .info {
             margin-bottom: 2rem;
-            background-color: #f4f4f4;
-            /* Color de fondo, ajustable */
+            background-color: #FFFFFF;
             border-radius: 10px;
-            /* Bordes redondeados */
             padding: 1rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            /* Sombra suave */
         }
 
         .info-header {
@@ -84,22 +86,7 @@
 
         .bugdroid-logo {
             width: 60px;
-            /* Ajusta el tamaño según necesidad */
             margin-right: 10px;
-        }
-
-        .info h2 {
-            margin: 0;
-            font-size: 2rem;
-            text-align: center;
-            transition: color 0.3s ease;
-        }
-
-        .info p {
-            margin: 0;
-            font-size: 1rem;
-            text-align: center;
-            transition: color 0.3s ease;
         }
 
         .registration {
@@ -120,19 +107,14 @@
         .linkedin-icon {
             display: inline-block;
             margin-top: 10px;
-            /* Ajusta según necesidad */
             color: #0077b5;
-            /* Color del ícono de LinkedIn */
             font-size: 24px;
-            /* Tamaño del ícono */
             transition: color 0.3s ease;
         }
 
         .linkedin-icon:hover {
             color: #005691;
-            /* Color al pasar el ratón por encima */
         }
-
 
         /* Estilos para el modo oscuro */
         @media (prefers-color-scheme: dark) {
@@ -149,6 +131,18 @@
             .info {
                 background-color: #2d2d2d;
                 color: #ffffff;
+            }
+
+            .talk h3,
+            .info h2 {
+                color: #ffffff;
+                /* Cambio de color para el título y los nombres en modo oscuro */
+            }
+
+            .talk p,
+            .info p {
+                color: #bbbbbb;
+                /* Cambio de color para el texto en modo oscuro */
             }
 
             .registration a {
