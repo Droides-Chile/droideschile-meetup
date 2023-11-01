@@ -116,6 +116,26 @@
             color: #005691;
         }
 
+        /* Estilo para las tarjetas de los meetups pasados */
+    .past-meetup-card {
+        background-color: #FFFFFF;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    }
+
+    .past-meetup-card:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    /* Estilo para el contenido oculto dentro de la tarjeta */
+    .past-meetup-content {
+        padding: 1rem 0;
+    }
+
         /* Estilos para el modo oscuro */
         @media (prefers-color-scheme: dark) {
             body {
@@ -157,6 +177,23 @@
             .linkedin-icon:hover {
                 color: #7ba7d0;
             }
+
+        .past-meetup-card {
+            background-color: #242424;
+            color: #ffffff;
+        }
+
+        .past-meetup-card:hover {
+            box-shadow: 0 14px 28px rgba(255, 255, 255, 0.25), 0 10px 10px rgba(255, 255, 255, 0.22);
+        }
+
+        .past-meetup-title {
+            color: #ffffff;
+        }
+
+        .past-meetup-content {
+            color: #bbbbbb;
+        }
         }
         /* Estilo para ocultar elementos */
         .hidden {

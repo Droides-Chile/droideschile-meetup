@@ -26,7 +26,7 @@ function displayUpcomingMeetup(meetup) {
                 <i class="fab fa-linkedin"></i>
             </a>
             <br />
-            <p>${speaker.topic}</p>
+            <p>${speaker.talkTitle}</p>
         `;
         talksContainer.appendChild(talkDiv);
     });
@@ -47,42 +47,65 @@ function displayPastMeetups(meetups) {
     pastMeetupsContainer.innerHTML = '';
 
     meetups.forEach(meetup => {
-        const meetupElement = document.createElement('div');
-        meetupElement.className = 'past-meetup';
+        const meetupCard = document.createElement('div');
+        meetupCard.className = 'past-meetup-card';
 
-        const meetupTitleElement = document.createElement('div');
-        meetupTitleElement.className = 'past-meetup-title';
-        meetupTitleElement.innerText = meetup.title;
-        meetupTitleElement.addEventListener('click', () => {
-            meetupDetailsElement.classList.toggle('hidden');
-        });
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'past-meetup-title';
+        titleDiv.onclick = () => toggleMeetupDetails(titleDiv);
 
-        const meetupDetailsElement = document.createElement('div');
-        meetupDetailsElement.className = 'past-meetup-details hidden';
+        const titleHeading = document.createElement('h3');
+        titleHeading.textContent = meetup.title;
+        titleDiv.appendChild(titleHeading);
 
-        meetupDetailsElement.innerHTML = `
-            <p><strong>Fecha:</strong> ${meetup.date}</p>
-            <p><strong>Lugar:</strong> ${meetup.location}</p>
-        `;
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'past-meetup-content';
+        contentDiv.style.display = 'none';
+
+        const datePara = document.createElement('p');
+        datePara.textContent = meetup.date;
+        contentDiv.appendChild(datePara);
+
+        const locationPara = document.createElement('p');
+        locationPara.textContent = meetup.location;
+        contentDiv.appendChild(locationPara);
 
         const speakersList = document.createElement('ul');
         meetup.speakers.forEach(speaker => {
             const speakerItem = document.createElement('li');
-            speakerItem.innerHTML = `
-                ${speaker.name} <a href="${speaker.linkedin}" target="_blank" class="linkedin-icon">
-                <i class="fab fa-linkedin"></i>
-            </a> - ${speaker.talkTitle}
-                
-            `;
+
+            const talkTitle = document.createElement('h4');
+            talkTitle.textContent = speaker.talkTitle;
+            speakerItem.appendChild(talkTitle);
+
+            const speakerName = document.createTextNode(speaker.name + ' - ');
+            speakerItem.appendChild(speakerName);
+
+            const linkedinAnchor = document.createElement('a');
+            linkedinAnchor.href = speaker.linkedin;
+            linkedinAnchor.target = '_blank';
+
+            const linkedinIcon = document.createElement('i');
+            linkedinIcon.className = 'fa fa-linkedin linkedin-icon';
+            linkedinAnchor.appendChild(linkedinIcon);
+
+            speakerItem.appendChild(linkedinAnchor);
             speakersList.appendChild(speakerItem);
         });
 
-        meetupDetailsElement.appendChild(speakersList);
+        contentDiv.appendChild(speakersList);
 
-        meetupElement.appendChild(meetupTitleElement);
-        meetupElement.appendChild(meetupDetailsElement);
-        pastMeetupsContainer.appendChild(meetupElement);
+        meetupCard.appendChild(titleDiv);
+        meetupCard.appendChild(contentDiv);
+        pastMeetupsContainer.appendChild(meetupCard);
     });
 }
 
-
+function toggleMeetupDetails(element) {
+    const content = element.nextElementSibling;
+    if (content.style.display === "none") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+}
