@@ -43,7 +43,6 @@ function displayUpcomingMeetup(meetup) {
 }
 
 function displayPastMeetups(meetups) {
-    // Código de la función displayPastMeetups
     // Encuentra el contenedor donde se mostrarán los meetups pasados.
     const pastMeetupsContainer = document.getElementById('past-meetups');
 
@@ -51,13 +50,32 @@ function displayPastMeetups(meetups) {
     pastMeetupsContainer.innerHTML = '';
 
     // Itera sobre cada meetup pasado.
-    meetups.forEach(meetup => {
+    meetups.forEach((meetup, index) => {
         // Crea los elementos HTML para mostrar los detalles del meetup.
         const meetupElement = document.createElement('div');
         meetupElement.className = 'past-meetup';
 
+        // Crea un botón o enlace para toggle.
+        const toggleButton = document.createElement('button');
+        toggleButton.innerText = 'Ver Detalles';
+        toggleButton.onclick = () => {
+            const details = document.getElementById(`meetup-details-${index}`);
+            if (details.style.display === 'none') {
+                details.style.display = 'block';
+                toggleButton.innerText = 'Ocultar Detalles';
+            } else {
+                details.style.display = 'none';
+                toggleButton.innerText = 'Ver Detalles';
+            }
+        };
+
+        // Crea un contenedor para los detalles, inicialmente oculto.
+        const detailsContainer = document.createElement('div');
+        detailsContainer.id = `meetup-details-${index}`;
+        detailsContainer.style.display = 'none';
+
         // Agrega los detalles del meetup.
-        meetupElement.innerHTML = `
+        detailsContainer.innerHTML = `
             <h3>${meetup.title}</h3>
             <p>${meetup.date}</p>
             <p>${meetup.location}</p>
@@ -71,7 +89,11 @@ function displayPastMeetups(meetups) {
             speakersList.appendChild(speakerItem);
         });
 
-        meetupElement.appendChild(speakersList);
+        detailsContainer.appendChild(speakersList);
+
+        // Agrega el botón de toggle y los detalles al elemento del meetup.
+        meetupElement.appendChild(toggleButton);
+        meetupElement.appendChild(detailsContainer);
 
         // Agrega el elemento del meetup al contenedor.
         pastMeetupsContainer.appendChild(meetupElement);
