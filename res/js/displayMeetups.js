@@ -73,22 +73,30 @@ function displayPastMeetups(meetups) {
         const speakersList = document.createElement('ul');
         meetup.speakers.forEach(speaker => {
             const speakerItem = document.createElement('li');
-
+            speakerItem.style.display = 'flex'; // Asegura que los elementos estén en línea
+            speakerItem.style.alignItems = 'center'; // Alinea verticalmente
+        
+            // Título de la charla
             const talkTitle = document.createElement('h4');
             talkTitle.textContent = speaker.talkTitle;
-            speakerItem.appendChild(talkTitle);
-
-            const speakerName = document.createTextNode(speaker.name + ' - ');
-            speakerItem.appendChild(speakerName);
-
+            talkTitle.style.marginRight = '10px'; // Espacio entre el título de la charla y el nombre del speaker
+        
+            // Nombre del speaker
+            const speakerName = document.createElement('span');
+            speakerName.textContent = speaker.name;
+            speakerName.style.marginRight = '5px'; // Espacio entre el nombre del speaker y el ícono de LinkedIn
+        
+            // Ícono de LinkedIn
             const linkedinAnchor = document.createElement('a');
             linkedinAnchor.href = speaker.linkedin;
             linkedinAnchor.target = '_blank';
-
             const linkedinIcon = document.createElement('i');
             linkedinIcon.className = 'fab fa-linkedin linkedin-icon';
             linkedinAnchor.appendChild(linkedinIcon);
-
+        
+            // Agrega los elementos al item del speaker
+            speakerItem.appendChild(talkTitle);
+            speakerItem.appendChild(speakerName);
             speakerItem.appendChild(linkedinAnchor);
             speakersList.appendChild(speakerItem);
         });
