@@ -86,7 +86,7 @@ function displayPastMeetups(meetups) {
             linkedinAnchor.target = '_blank';
 
             const linkedinIcon = document.createElement('i');
-            linkedinIcon.className = 'fa fa-linkedin linkedin-icon';
+            linkedinIcon.className = 'fab fa-linkedin linkedin-icon';
             linkedinAnchor.appendChild(linkedinIcon);
 
             speakerItem.appendChild(linkedinAnchor);
