@@ -1,6 +1,9 @@
 function formatDate(dateString) {
-    // Crea un objeto Date a partir de la cadena de fecha
-    const date = new Date(dateString);
+    // Añade la zona horaria de Chile al final de la cadena de fecha
+    const chileanTimeString = dateString + 'T00:00:00-03:00'; // Asumiendo GMT-3 para horario estándar de Chile
+
+    // Crea un objeto Date a partir de la cadena de fecha ajustada
+    const date = new Date(chileanTimeString);
 
     // Formatea la fecha asumiendo la zona horaria de Chile (America/Santiago)
     return date.toLocaleString('es-CL', {
@@ -11,6 +14,7 @@ function formatDate(dateString) {
         year: 'numeric'
     });
 }
+
 
 function displayUpcomingMeetup(meetup) {
     // Código de la función displayUpcomingMeetup
