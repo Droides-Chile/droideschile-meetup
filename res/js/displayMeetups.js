@@ -69,10 +69,10 @@ function displayPastMeetups(meetups) {
         meetup.speakers.forEach(speaker => {
             const speakerItem = document.createElement('li');
             speakerItem.innerHTML = `
-                ${speaker.name} - ${speaker.talkTitle}
-                <a href="${speaker.linkedin}" target="_blank" class="linkedin-icon">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+                ${speaker.name} <a href="${speaker.linkedin}" target="_blank" class="linkedin-icon">
+                <i class="fab fa-linkedin"></i>
+            </a> - ${speaker.talkTitle}
+                
             `;
             speakersList.appendChild(speakerItem);
         });
