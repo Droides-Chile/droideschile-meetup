@@ -54,7 +54,7 @@ function displayUpcomingMeetup(meetup) {
     const registrationDiv = document.createElement('div');
     registrationDiv.className = 'registration';
     registrationDiv.innerHTML = `
-        <a href="${meetup.registrationLink}">Registrate</a>
+        <a href="${meetup.registrationUrl}">Registrate</a>
     `;
 
     container.appendChild(registrationDiv);
