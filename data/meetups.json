@@ -1,0 +1,44 @@
+{
+    "upcomingMeetup": {
+      "title": "Droides Chile Meetup - Noviembre 2023",
+      "date": "Jueves 23 de Noviembre, 2023",
+      "location": "Av. Presidente Riesco #3237 Las Condes - Santiago",
+      "registrationUrl": "https://forms.gle/CiVavatacSVbdCNq7",
+      "speakers": [
+        {
+          "name": "Gerardo Prado",
+          "role": "Android Chapter Lead",
+          "company": "Productos Digitales Accenture Chile",
+          "linkedin": "https://www.linkedin.com/in/gdavidpb/",
+          "image": "res/img/speaker-gerardo-prado.jpeg",
+          "talkTitle": "De XML a Compose: Un cambio de modelo de pensamiento"
+        },
+        {
+          "name": "Ciro Oyarzun",
+          "role": "Android Dev",
+          "company": "Mobdev",
+          "linkedin": "https://www.linkedin.com/in/ciro-oyarz%C3%BAn-orrego-23a24641/",
+          "image": "res/img/speaker-ciro-oyarzun.jpeg",
+          "talkTitle": "Android y ChatGPT: creando un chatbot con esteroides"
+        }
+      ]
+    },
+    "pastMeetups": [
+      {
+        "title": "Droides Chile Meetup - Octubre 2023",
+        "date": "Jueves 20 de Octubre, 2023",
+        "location": "Av. Apoquindo #4501 Las Condes - Santiago",
+        "speakers": [
+          {
+            "name": "Maria Perez",
+            "role": "Android Developer",
+            "company": "Tech Solutions",
+            "linkedin": "https://www.linkedin.com/in/mariaperez/",
+            "image": "res/img/speaker-maria-perez.jpeg",
+            "talkTitle": "Integrando IA en aplicaciones Android"
+          }
+        ]
+      }
+    ]
+  }
+  
