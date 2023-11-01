@@ -71,27 +71,32 @@ function displayPastMeetups(meetups) {
         contentDiv.appendChild(locationPara);
 
         const speakersList = document.createElement('ul');
-       
+
         meetup.speakers.forEach(speaker => {
             const speakerItem = document.createElement('li');
             speakerItem.style.display = 'flex'; // Asegura que los elementos estén en línea
             speakerItem.style.alignItems = 'center'; // Alinea verticalmente
-        
+
             // Título de la charla
             const talkTitle = document.createElement('h4');
             talkTitle.textContent = speaker.talkTitle;
             talkTitle.style.marginRight = '10px'; // Espacio entre el título de la charla y el guión
-        
+
             // Guion entre el título de la charla y el nombre del speaker
             const dash = document.createElement('span');
             dash.textContent = ' - ';
             dash.style.marginRight = '5px';
-        
+
             // Nombre del speaker
             const speakerName = document.createElement('span');
             speakerName.textContent = speaker.name;
             speakerName.style.marginRight = '5px'; // Espacio entre el nombre del speaker y el ícono de LinkedIn
-        
+
+            // Agrega los elementos al item del speaker
+            speakerItem.appendChild(talkTitle);
+            speakerItem.appendChild(dash);
+            speakerItem.appendChild(speakerName);
+
             // Verifica si el speaker tiene un enlace de LinkedIn
             if (speaker.linkedin && speaker.linkedin.trim() !== '') {
                 const linkedinAnchor = document.createElement('a');
@@ -102,17 +107,13 @@ function displayPastMeetups(meetups) {
                 const linkedinIcon = document.createElement('i');
                 linkedinIcon.className = 'fab fa-linkedin linkedin-icon';
                 linkedinAnchor.appendChild(linkedinIcon);
-        
+
                 speakerItem.appendChild(linkedinAnchor);
             }
-        
-            // Agrega los elementos al item del speaker
-            speakerItem.appendChild(talkTitle);
-            speakerItem.appendChild(dash);
-            speakerItem.appendChild(speakerName);
+
             speakersList.appendChild(speakerItem);
         });
-        
+
         contentDiv.appendChild(speakersList);
 
         meetupCard.appendChild(titleDiv);

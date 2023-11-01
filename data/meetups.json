@@ -1,5 +1,6 @@
 {
-    "upcomingMeetup": {
+  "meetups": [
+    {
       "title": "Droides Chile Meetup - Noviembre 2023",
       "date": "Jueves 23 de Noviembre, 2023",
       "location": "Av. Presidente Riesco #3237 Las Condes - Santiago",
@@ -23,22 +24,20 @@
         }
       ]
     },
-    "pastMeetups": [
-      {
-        "title": "Droides Chile Meetup - Octubre 2023",
-        "date": "Jueves 20 de Octubre, 2023",
-        "location": "Av. Apoquindo #4501 Las Condes - Santiago",
-        "speakers": [
-          {
-            "name": "Maria Perez",
-            "role": "Android Developer",
-            "company": "Tech Solutions",
-            "linkedin": "https://www.linkedin.com/in/mariaperez/",
-            "image": "res/img/speaker-maria-perez.jpeg",
-            "talkTitle": "Integrando IA en aplicaciones Android"
-          }
-        ]
-      }
-    ]
-  }
-  
+    {
+      "title": "Droides Chile Meetup - Octubre 2023",
+      "date": "Jueves 20 de Octubre, 2023",
+      "location": "Av. Apoquindo #4501 Las Condes - Santiago",
+      "speakers": [
+        {
+          "name": "Maria Perez",
+          "role": "Android Developer",
+          "company": "Tech Solutions",
+          "linkedin": "https://www.linkedin.com/in/mariaperez/",
+          "image": "res/img/speaker-maria-perez.jpeg",
+          "talkTitle": "Integrando IA en aplicaciones Android"
+        }
+      ]
+    }
+  ]
+}
