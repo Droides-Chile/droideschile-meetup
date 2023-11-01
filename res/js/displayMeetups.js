@@ -92,25 +92,27 @@ function displayPastMeetups(meetups) {
             speakerName.textContent = speaker.name;
             speakerName.style.marginRight = '5px'; // Espacio entre el nombre del speaker y el ícono de LinkedIn
         
-            // Ícono de LinkedIn
-            const linkedinAnchor = document.createElement('a');
-            linkedinAnchor.href = speaker.linkedin;
-            linkedinAnchor.target = '_blank';
-            linkedinAnchor.style.display = 'flex'; // Asegura que el ícono esté correctamente alineado
-            linkedinAnchor.style.alignItems = 'center'; // Alinea el ícono con el texto
-            const linkedinIcon = document.createElement('i');
-            linkedinIcon.className = 'fab fa-linkedin linkedin-icon';
-            linkedinAnchor.appendChild(linkedinIcon);
+            // Verifica si el speaker tiene un enlace de LinkedIn
+            if (speaker.linkedin && speaker.linkedin.trim() !== '') {
+                const linkedinAnchor = document.createElement('a');
+                linkedinAnchor.href = speaker.linkedin;
+                linkedinAnchor.target = '_blank';
+                linkedinAnchor.style.display = 'flex'; // Asegura que el ícono esté correctamente alineado
+                linkedinAnchor.style.alignItems = 'center'; // Alinea el ícono con el texto
+                const linkedinIcon = document.createElement('i');
+                linkedinIcon.className = 'fab fa-linkedin linkedin-icon';
+                linkedinAnchor.appendChild(linkedinIcon);
+        
+                speakerItem.appendChild(linkedinAnchor);
+            }
         
             // Agrega los elementos al item del speaker
             speakerItem.appendChild(talkTitle);
             speakerItem.appendChild(dash);
             speakerItem.appendChild(speakerName);
-            speakerItem.appendChild(linkedinAnchor);
             speakersList.appendChild(speakerItem);
         });
         
-
         contentDiv.appendChild(speakersList);
 
         meetupCard.appendChild(titleDiv);
