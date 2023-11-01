@@ -1,11 +1,15 @@
 function formatDate(dateString) {
+    // Crea un objeto Date a partir de la cadena de fecha
     const date = new Date(dateString);
-    return new Intl.DateTimeFormat(navigator.language, { 
-        weekday: 'long', 
-        day: 'numeric', 
-        month: 'long', 
-        year: 'numeric' 
-    }).format(date);
+
+    // Formatea la fecha asumiendo la zona horaria de Chile (America/Santiago)
+    return date.toLocaleString('es-CL', {
+        timeZone: 'America/Santiago',
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
 }
 
 function displayUpcomingMeetup(meetup) {
