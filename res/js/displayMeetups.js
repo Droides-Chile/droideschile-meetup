@@ -1,18 +1,12 @@
 function formatDate(dateString) {
-    // Añade la zona horaria de Chile al final de la cadena de fecha
-    const chileanTimeString = dateString + 'T00:00:00-03:00'; // Asumiendo GMT-3 para horario estándar de Chile
+    // Configura moment.js para usar el idioma español
+    moment.locale('es');
 
-    // Crea un objeto Date a partir de la cadena de fecha ajustada
-    const date = new Date(chileanTimeString);
+    // Asumimos que la fecha viene en formato "YYYY-MM-DD HH:mm" y está en Chilean Time
+    const date = moment.tz(dateString, "YYYY-MM-DD HH:mm", "America/Santiago");
 
-    // Formatea la fecha asumiendo la zona horaria de Chile (America/Santiago)
-    return date.toLocaleString('es-CL', {
-        timeZone: 'America/Santiago',
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    });
+    // Formateamos la fecha a "Jueves 23 de noviembre, 2023 19:30"
+    return date.format("dddd D [de] MMMM, YYYY HH:mm");
 }
 
 
