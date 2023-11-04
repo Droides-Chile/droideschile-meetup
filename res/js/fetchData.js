@@ -1,3 +1,5 @@
+import { addGoogleCalendarButton } from './addToCalendar.js';
+
 async function fetchData() {
     try {
         const response = await fetch('data/meetups.json');
@@ -19,6 +21,7 @@ async function fetchData() {
         // Muestra el próximo meetup si existe
         if (upcomingMeetup.length > 0) {
             displayUpcomingMeetup(upcomingMeetup[0]);
+            addGoogleCalendarButton(upcomingMeetup[0], 'upcomingMeetup'); // Función para añadir el botón
         }
 
         // Muestra los meetups pasados
