@@ -1,6 +1,27 @@
 {
   "meetups": [
     {
+      "title": "Droides Chile Meetup - Marzo 2024",
+      "date": "2024-03-14 19:00",
+      "location": "Thoughworks Chile, Avenida Providencia, 1760, piso 16, Providencia, Santiago",
+      "registrationUrl": "https://forms.gle/gKKZs6nWi5NN3YwKA",
+      "speakers": [
+        {
+          "name": "Cristina Cares",
+          "role": "Lead Consultant",
+          "company": "Thoughtworks Chile",
+          "image": "res/img/speaker-ciro-oyarzun.jpeg",
+          "talkTitle": "¿De dónde venimos? ¿Para dónde vamos? Navegación con Jetpack Compose"
+        },
+        {
+          "name": "Harttin Arce",
+          "role": "Lead Consultant",
+          "company": "Thoughtworks Chile",
+          "image": "res/img/speaker-gerardo-prado.jpeg",
+          "talkTitle": "'Entre más nos elevamos, más cerca parece que estamos' Jetpack Compose edition"
+        }
+      ]
+    },{
       "title": "Droides Chile Meetup - Noviembre 2023",
       "date": "2023-11-23 19:30",
       "location": "Av. Presidente Riesco #3237 Las Condes - Santiago",
