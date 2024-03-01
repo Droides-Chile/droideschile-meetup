@@ -10,14 +10,16 @@
           "name": "Cristina Cares",
           "role": "Lead Consultant",
           "company": "Thoughtworks Chile",
-          "image": "res/img/speaker-ciro-oyarzun.jpeg",
+          "linkedin": "https://www.linkedin.com/in/cristicares/",
+          "image": "res/img/speaker-cristina-cares.jpeg",
           "talkTitle": "¿De dónde venimos? ¿Para dónde vamos? Navegación con Jetpack Compose"
         },
         {
           "name": "Harttin Arce",
           "role": "Lead Consultant",
           "company": "Thoughtworks Chile",
-          "image": "res/img/speaker-gerardo-prado.jpeg",
+          "linkedin": "https://www.linkedin.com/in/harttin-arce-405bb535/",
+          "image": "res/img/speaker-harttin-arce.jpeg",
           "talkTitle": "'Entre más nos elevamos, más cerca parece que estamos' Jetpack Compose edition"
         }
       ]
