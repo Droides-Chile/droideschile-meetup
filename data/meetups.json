@@ -1,6 +1,29 @@
 {
   "meetups": [
     {
+      "title": "Droides Chile Meetup - Abril 2024",
+      "date": "2024-03-18 19:00",
+      "location": "MOBDEV, Av. Presidente Riesco #3237 Las Condes - Santiago",
+      "registrationUrl": "https://forms.gle/MxquVNp3ovTbScxJ9",
+      "speakers": [
+        {
+          "name": "Jose Valladares",
+          "role": "Technical Lead",
+          "company": "BCI",
+          "linkedin": "https://www.linkedin.com/in/jose-v-a12bb928/",
+          "image": "res/img/speaker-jose-valladares.jpeg",
+          "talkTitle": "Microservicios con Kotlin"
+        },
+        {
+          "name": "Carlos Hinostroza",
+          "role": "Principal Software Engineer, Android",
+          "company": "MOBDEV",
+          "linkedin": "https://www.linkedin.com/in/chinostroza/",
+          "image": "res/img/speaker-carlos-hinostroza.jpeg",
+          "talkTitle": "Migrando una app en Android a Kotlin Multiplatform"
+        }
+      ]
+    },{
       "title": "Droides Chile Meetup - Marzo 2024",
       "date": "2024-03-14 19:00",
       "location": "Thoughtworks Chile, Avenida Providencia, 1760, piso 16, Providencia, Santiago",
